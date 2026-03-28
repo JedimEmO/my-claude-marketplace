@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "app-frontend",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "rimraf dist/js && rollup --config",
+    "build:release": "rimraf dist/js && RELEASE=true rollup --config",
+    "start": "[ ! -f ../Cargo.lock ] && cargo check --target wasm32-unknown-unknown -p app-frontend; rimraf dist/js && rollup --config --watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0",
+    "@wasm-tool/rollup-plugin-rust": "^3",
+    "binaryen": "^121",
+    "rimraf": "^6",
+    "rollup": "^4",
+    "rollup-plugin-copy": "^3",
+    "rollup-plugin-dev": "^2",
+    "rollup-plugin-livereload": "^2"
+  }
+}

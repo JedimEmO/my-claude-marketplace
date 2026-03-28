@@ -1,0 +1,31 @@
+[package]
+name = "app-service"
+version = "0.1.0"
+edition.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+app-core = { path = "../app-core" }
+app-api = { path = "../app-api" }
+app-adapters = { path = "../app-adapters" }
+ras-auth-core.workspace = true
+ras-rest-core.workspace = true
+ras-identity-core.workspace = true
+ras-identity-session.workspace = true
+ras-identity-local.workspace = true
+axum.workspace = true
+tokio.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+async-trait.workspace = true
+uuid.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tower-http.workspace = true
+
+[dev-dependencies]
+app-testutils = { path = "../app-testutils" }
+axum-test.workspace = true

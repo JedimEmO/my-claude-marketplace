@@ -26,6 +26,12 @@
       "source": "ras",
       "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation",
       "version": "1.0.0"
+    },
+    {
+      "name": "scaffold",
+      "source": "scaffold",
+      "description": "Full-stack scaffold — compilable, tested Rust workspace with RAS backend, dwind frontend, and shared domain",
+      "version": "1.0.0"
     }
   ]
 }

@@ -8,6 +8,8 @@ tools: Read, Glob, Grep, Edit, Write, Bash
 
 Opinionated guide for structuring Rust projects. Start simple, split when there's a reason to. Every project is a workspace from day one (even single-crate projects benefit from workspace-level configuration).
 
+> **Starter template:** For a ready-to-compile project that demonstrates these patterns, see the **scaffold-fullstack** skill.
+
 ## Start with a Single Crate
 
 New projects begin as a single crate with internal module boundaries that anticipate future splits. Don't create multiple crates speculatively.

@@ -1,0 +1,47 @@
+FROM rust:1.85-slim AS builder
+
+WORKDIR /app
+
+# Install build deps
+RUN apt-get update && apt-get install -y pkg-config libssl-dev && rm -rf /var/lib/apt/lists/*
+
+# Copy workspace manifests first for better caching
+COPY Cargo.toml Cargo.lock ./
+COPY crates/app-core/Cargo.toml crates/app-core/Cargo.toml
+COPY crates/app-api/Cargo.toml crates/app-api/Cargo.toml
+COPY crates/app-adapters/Cargo.toml crates/app-adapters/Cargo.toml
+COPY crates/app-service/Cargo.toml crates/app-service/Cargo.toml
+COPY crates/app-testutils/Cargo.toml crates/app-testutils/Cargo.toml
+COPY crates/app-frontend/Cargo.toml crates/app-frontend/Cargo.toml
+
+# Create stub src files so cargo can resolve the workspace
+RUN mkdir -p crates/app-core/src && echo "" > crates/app-core/src/lib.rs && \
+    mkdir -p crates/app-api/src && echo "" > crates/app-api/src/lib.rs && \
+    mkdir -p crates/app-adapters/src && echo "" > crates/app-adapters/src/lib.rs && \
+    mkdir -p crates/app-service/src && echo "fn main() {}" > crates/app-service/src/main.rs && \
+    mkdir -p crates/app-testutils/src && echo "" > crates/app-testutils/src/lib.rs && \
+    mkdir -p crates/app-frontend/src && echo "" > crates/app-frontend/src/lib.rs
+
+# Pre-fetch and compile dependencies
+RUN cargo build --release -p app-service 2>/dev/null || true
+
+# Copy actual source code
+COPY crates/ crates/
+
+# Touch source files to invalidate the cached stubs
+RUN find crates -name "*.rs" -exec touch {} +
+
+# Build for real
+RUN cargo build --release -p app-service
+
+# Runtime image
+FROM debian:bookworm-slim
+
+RUN apt-get update && apt-get install -y ca-certificates libssl3 && rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /app/target/release/app-service /usr/local/bin/app-service
+
+ENV RUST_LOG=info
+EXPOSE 3000
+
+CMD ["app-service"]

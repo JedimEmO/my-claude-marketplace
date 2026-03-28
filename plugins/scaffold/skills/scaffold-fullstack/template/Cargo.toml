@@ -1,0 +1,54 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.85"
+
+[workspace.dependencies]
+# RAS — not on crates.io, use git dependency
+ras-rest-macro = { git = "https://github.com/JedimEmO/rust-agent-stack.git" }
+ras-rest-core = { git = "https://github.com/JedimEmO/rust-agent-stack.git" }
+ras-auth-core = { git = "https://github.com/JedimEmO/rust-agent-stack.git" }
+ras-identity-core = { git = "https://github.com/JedimEmO/rust-agent-stack.git" }
+ras-identity-session = { git = "https://github.com/JedimEmO/rust-agent-stack.git" }
+ras-identity-local = { git = "https://github.com/JedimEmO/rust-agent-stack.git" }
+# Standard
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+schemars = { version = "1.0.0-alpha.20", features = ["uuid1", "chrono04"] }
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal"] }
+axum = "0.8"
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4", "serde", "js"] }
+tower-http = { version = "0.6", features = ["cors"] }
+
+# WASM / Frontend
+dominator = "0.5"
+dwind = "0.6"
+dwind-macros = "0.4"
+futures-signals = "0.3"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+console_error_panic_hook = "0.1"
+
+# Testing
+axum-test = "18"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+unwrap_used = "warn"
+
+[workspace.lints.rust]
+unsafe_code = "deny"

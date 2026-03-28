@@ -8,6 +8,8 @@ tools: Read, Glob, Grep, Edit, Write, Bash
 
 RAS projects follow the same workspace-first, crate-split conventions from the **rust-project-setup** skill. The key addition: an **API crate** where macro invocations define the service contract, sitting between the domain core and the binary that wires everything together.
 
+> **Starter template:** For a ready-to-compile RAS project with tests, see the **scaffold-fullstack** skill.
+
 ## Project Structure
 
 A typical RAS project adds an API crate to the standard layout:

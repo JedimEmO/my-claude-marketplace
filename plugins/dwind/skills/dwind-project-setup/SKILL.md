@@ -8,6 +8,8 @@ tools: Read, Glob, Grep, Edit, Write, Bash
 
 Set up a new Rust/WASM web application using the dwind stack.
 
+> **Full-stack template:** For a dwind frontend integrated with a RAS backend, see the **scaffold-fullstack** skill.
+
 ## Project Structure
 
 ```
