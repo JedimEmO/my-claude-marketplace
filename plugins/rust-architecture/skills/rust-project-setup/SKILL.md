@@ -65,7 +65,7 @@ my-project/
 ```
 
 - **`my-core`** depends only on `std` and domain-specific crates (e.g., `chrono`, `uuid`). Never on IO crates. Defines traits (ports) for external dependencies.
-- **`my-client`** depends on `my-core` + IO crates (`reqwest`, `rusqlite`, etc.). Implements the port traits.
+- **`my-client`** depends on `my-core` + IO crates (`reqwest`, `diesel`, etc.). Implements the port traits.
 - **`my-app`** depends on `my-core` + `my-client`. Constructs concrete adapters and injects them. Contains `main()`.
 - **`my-testutils`** exports shared fakes, builders, and fixtures. Only ever a `[dev-dependencies]` entry.
 
@@ -89,6 +89,8 @@ tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 anyhow = "1"
 thiserror = "2"
 tracing = "0.1"
+diesel = { version = "2", features = ["sqlite"] }
+diesel_migrations = "2"
 
 [workspace.lints.clippy]
 pedantic = { level = "warn", priority = -1 }

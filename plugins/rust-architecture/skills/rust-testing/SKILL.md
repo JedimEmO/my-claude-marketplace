@@ -272,9 +272,15 @@ This is a **medium test** — exercises real HTTP routing, middleware, extractio
 For tests that also need a real database, wire in an in-memory SQLite instead of fakes:
 
 ```rust
+use diesel::sqlite::SqliteConnection;
+use diesel::Connection;
+use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
+
+const MIGRATIONS: EmbeddedMigrations = embed_migrations!();
+
 async fn create_test_server_with_db() -> TestServer {
-    let conn = Connection::open_in_memory().unwrap();
-    run_migrations(&conn).unwrap();
+    let mut conn = SqliteConnection::establish(":memory:").unwrap();
+    conn.run_pending_migrations(MIGRATIONS).unwrap();
 
     let users: Arc<dyn UserRepository> = Arc::new(SqliteUserRepository::new(conn));
     let notifier: Arc<dyn Notifier> = Arc::new(FakeNotifier::new());

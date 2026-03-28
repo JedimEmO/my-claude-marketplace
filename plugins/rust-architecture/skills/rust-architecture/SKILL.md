@@ -101,7 +101,7 @@ This layer is trivially testable — no fakes needed for pure functions, and tra
 
 ### Adapters
 
-Implement the port traits. HTTP clients, database access, file IO, message queues. Each adapter depends on the core crate (for the trait definition) plus its IO crates (`reqwest`, `rusqlite`, etc.).
+Implement the port traits. HTTP clients, database access, file IO, message queues. Each adapter depends on the core crate (for the trait definition) plus its IO crates (`reqwest`, `diesel`, etc.).
 
 Adapters live in separate modules or separate crates, depending on project size (see **rust-project-setup** for when to split).
 
@@ -112,7 +112,8 @@ Adapters live in separate modules or separate crates, depending on project size 
 ```rust
 fn main() -> anyhow::Result<()> {
     let config = Config::from_env()?;
-    let db_conn = open_database(&config.database_path)?;
+    let mut db_conn = SqliteConnection::establish(&config.database_url)?;
+    run_pending_migrations(&mut db_conn)?;
 
     let users: Arc<dyn UserRepository> = Arc::new(SqliteUserRepository::new(db_conn));
     let notifier: Arc<dyn Notifier> = Arc::new(EmailNotifier::new(&config.smtp));

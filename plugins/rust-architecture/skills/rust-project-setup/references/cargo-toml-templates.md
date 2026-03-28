@@ -22,6 +22,10 @@ thiserror = "2"
 # Async (runtime-agnostic where possible)
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 
+# Database
+diesel = { version = "2", features = ["sqlite"] }
+diesel_migrations = "2"
+
 # Observability
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
@@ -79,6 +83,8 @@ serde.workspace = true
 anyhow.workspace = true
 tokio.workspace = true
 tracing.workspace = true
+diesel.workspace = true
+diesel_migrations.workspace = true
 
 [dev-dependencies]
 my-testutils = { path = "../my-testutils" }
