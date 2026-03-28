@@ -1,0 +1,12 @@
+{
+  "name": "my-claude-marketplace",
+  "owner": {
+    "name": "JedimEmO"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugin marketplace — MCP servers, skills, and tools",
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": []
+}
