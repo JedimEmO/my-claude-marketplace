@@ -8,5 +8,12 @@
     "version": "0.1.0",
     "pluginRoot": "./plugins"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "dwind",
+      "source": "dwind",
+      "description": "Skills for building UIs with the dwind/dominator/futures-signals Rust+WASM stack",
+      "version": "1.0.0"
+    }
+  ]
 }

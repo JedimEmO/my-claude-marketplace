@@ -1,0 +1,54 @@
+name: Deploy mdBook to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdBook
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: "0.4.35"
+
+      - name: Generate summary and build book
+        run: |
+          python3 generate-summary.py > book-src/SUMMARY.md
+          find plugins -name '*.md' -not -path '*/.git/*' | while read -r md; do
+            rel="${md#plugins/}"
+            target_dir="book-src/$(dirname "$rel")"
+            mkdir -p "$target_dir"
+            cp "$md" "$target_dir/$(basename "$md")"
+          done
+          [ -f README.md ] && cp README.md book-src/index.md
+          mdbook build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: book-out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,13 @@
+[book]
+title = "Mathias Marketplace — Plugin Reference"
+authors = ["JedimEmO"]
+language = "en"
+src = "book-src"
+
+[build]
+build-dir = "book-out"
+
+[output.html]
+git-repository-url = "https://github.com/JedimEmO/my-claude-marketplace"
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
