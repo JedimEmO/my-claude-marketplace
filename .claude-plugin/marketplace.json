@@ -32,6 +32,12 @@
       "source": "./plugins/scaffold",
       "description": "Project scaffolds — full-stack webapp (RAS + dwind) and desktop app (Tauri 2 + dwind)",
       "version": "1.0.0"
+    },
+    {
+      "name": "claude-workflow",
+      "source": "./plugins/claude-workflow",
+      "description": "Workflow orchestration and qualitative code analysis — task completion checklist, soft harness creation and execution for non-functional quality tracking",
+      "version": "1.0.0"
     }
   ]
 }
