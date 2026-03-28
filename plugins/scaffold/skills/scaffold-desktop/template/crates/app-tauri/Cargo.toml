@@ -1,0 +1,23 @@
+[package]
+name = "app-tauri"
+version = "0.1.0"
+edition.workspace = true
+
+[lints]
+workspace = true
+
+[build-dependencies]
+tauri-build.workspace = true
+
+[dependencies]
+app-core = { path = "../app-core" }
+app-adapters = { path = "../app-adapters" }
+tauri.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+app-testutils = { path = "../app-testutils" }
+tokio.workspace = true

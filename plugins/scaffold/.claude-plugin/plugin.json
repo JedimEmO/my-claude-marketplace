@@ -1,5 +1,5 @@
 {
   "name": "scaffold",
   "version": "1.0.0",
-  "description": "Full-stack scaffold — Rust workspace with RAS backend, dwind frontend, and shared domain"
+  "description": "Project scaffolds — full-stack webapp (RAS + dwind) and desktop app (Tauri 2 + dwind)"
 }

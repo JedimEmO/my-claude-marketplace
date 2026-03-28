@@ -11,26 +11,26 @@
   "plugins": [
     {
       "name": "dwind",
-      "source": "dwind",
+      "source": "./plugins/dwind",
       "description": "Skills for building UIs with the dwind/dominator/futures-signals Rust+WASM stack",
       "version": "1.0.0"
     },
     {
       "name": "rust-architecture",
-      "source": "rust-architecture",
+      "source": "./plugins/rust-architecture",
       "description": "Opinionated Rust project structuring — workspace layout, DI patterns, testing strategy, and CI tooling",
       "version": "1.0.0"
     },
     {
       "name": "ras",
-      "source": "ras",
+      "source": "./plugins/ras",
       "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation",
       "version": "1.0.0"
     },
     {
       "name": "scaffold",
-      "source": "scaffold",
-      "description": "Full-stack scaffold — compilable, tested Rust workspace with RAS backend, dwind frontend, and shared domain",
+      "source": "./plugins/scaffold",
+      "description": "Project scaffolds — full-stack webapp (RAS + dwind) and desktop app (Tauri 2 + dwind)",
       "version": "1.0.0"
     }
   ]

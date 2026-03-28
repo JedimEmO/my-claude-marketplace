@@ -1,0 +1,41 @@
+# Default: run all checks
+default: check test
+
+# Format code
+fmt:
+    cargo fmt --all
+
+# Check formatting (CI)
+fmt-check:
+    cargo fmt --all -- --check
+
+# Run clippy on parent workspace (backend + core + adapters + testutils)
+check:
+    cargo clippy --workspace --all-targets -- -D warnings
+
+# Run all tests
+test:
+    cargo test --workspace
+
+# Full CI pipeline locally
+ci: fmt-check check test
+
+# Development: starts Trunk + Tauri together (hot-reload)
+dev:
+    cd crates/app-tauri && cargo tauri dev
+
+# Production build (creates native installer)
+build:
+    cd crates/app-tauri && cargo tauri build
+
+# Build frontend WASM only (useful for CI)
+build-frontend:
+    cd crates/app && trunk build
+
+# Clean build artifacts
+clean:
+    cargo clean
+
+# Watch and run tests on change (requires cargo-watch)
+watch:
+    cargo watch -x 'test --workspace'
