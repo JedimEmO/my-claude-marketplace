@@ -1,0 +1,5 @@
+{
+  "name": "ras",
+  "version": "1.0.0",
+  "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation"
+}

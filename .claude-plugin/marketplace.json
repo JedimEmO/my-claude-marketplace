@@ -20,6 +20,12 @@
       "source": "rust-architecture",
       "description": "Opinionated Rust project structuring — workspace layout, DI patterns, testing strategy, and CI tooling",
       "version": "1.0.0"
+    },
+    {
+      "name": "ras",
+      "source": "ras",
+      "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation",
+      "version": "1.0.0"
     }
   ]
 }
