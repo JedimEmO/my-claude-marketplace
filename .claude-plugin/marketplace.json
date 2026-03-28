@@ -38,6 +38,12 @@
       "source": "./plugins/claude-workflow",
       "description": "Workflow orchestration and qualitative code analysis — task completion checklist, soft harness creation and execution for non-functional quality tracking",
       "version": "1.0.0"
+    },
+    {
+      "name": "bevy",
+      "source": "./plugins/bevy",
+      "description": "Skills for building games and interactive applications with the Bevy ECS game engine in Rust",
+      "version": "1.0.0"
     }
   ]
 }

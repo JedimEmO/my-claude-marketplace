@@ -1,0 +1,5 @@
+{
+  "name": "bevy",
+  "version": "1.0.0",
+  "description": "Skills for building games and interactive applications with the Bevy ECS game engine in Rust"
+}
