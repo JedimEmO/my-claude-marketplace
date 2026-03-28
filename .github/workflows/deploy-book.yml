@@ -27,6 +27,7 @@ jobs:
 
       - name: Generate summary and build book
         run: |
+          mkdir -p book-src
           python3 generate-summary.py > book-src/SUMMARY.md
           find plugins -name '*.md' -not -path '*/.git/*' | while read -r md; do
             rel="${md#plugins/}"
