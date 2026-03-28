@@ -1,5 +1,7 @@
 # my-claude-marketplace
 
+[**Browse the plugin reference book**](https://jedimemo.github.io/my-claude-marketplace/)
+
 Personal Claude Code plugin marketplace — MCP servers, skills, and tools.
 
 ## Usage
