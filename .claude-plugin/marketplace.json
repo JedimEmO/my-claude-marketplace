@@ -14,6 +14,12 @@
       "source": "dwind",
       "description": "Skills for building UIs with the dwind/dominator/futures-signals Rust+WASM stack",
       "version": "1.0.0"
+    },
+    {
+      "name": "rust-architecture",
+      "source": "rust-architecture",
+      "description": "Opinionated Rust project structuring — workspace layout, DI patterns, testing strategy, and CI tooling",
+      "version": "1.0.0"
     }
   ]
 }
