@@ -193,9 +193,22 @@ npm start
 npm run build:release
 ```
 
+## Tauri Desktop App
+
+Dwind apps can also run as native desktop applications using Tauri 2. Instead of Rollup, the frontend is built with Trunk and loaded into Tauri's webview. The backend is a separate Rust crate that communicates with the frontend via IPC commands and events.
+
+For Tauri setup, use the **dwind-tauri** skill which covers the full project structure, IPC bridge, Tauri configuration, and build toolchain.
+
+Key differences from a web app:
+- **Trunk** replaces Rollup as the WASM bundler
+- Frontend and backend are **separate crates** with isolated workspaces
+- `tauri.conf.json` wires Trunk's dev server to Tauri's webview
+- `window.__TAURI__` provides IPC, accessed via `wasm_bindgen` inline JS
+
 ## Template Reference
 
 For the most up-to-date, working project template with all configuration files:
-`/home/mmy/repos/oss/dwind-dominator-template/`
+- **Web app**: `/home/mmy/repos/oss/dwind-dominator-template/`
+- **Tauri app**: `/home/mmy/repos/ai/experiments/karaokemonster/crates/karaoke-app/`
 
 Read those files when scaffolding a new project to ensure you have the latest dependency versions and build config.
