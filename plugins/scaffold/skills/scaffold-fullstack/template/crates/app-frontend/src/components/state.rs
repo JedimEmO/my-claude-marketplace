@@ -39,3 +39,39 @@ impl AppState {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use app_core::dto::LoginResponse;
+
+    #[test]
+    fn login_sets_token_and_user() {
+        let state = AppState::new();
+        assert!(state.auth.token.get_cloned().is_none());
+
+        state.auth.login(LoginResponse {
+            token: "jwt-123".into(),
+            user_id: "alice".into(),
+            permissions: vec!["items:write".into()],
+        });
+
+        assert_eq!(state.auth.token.get_cloned().unwrap(), "jwt-123");
+        assert_eq!(state.auth.user_id.get_cloned().unwrap(), "alice");
+    }
+
+    #[test]
+    fn logout_clears_state() {
+        let state = AppState::new();
+        state.auth.login(LoginResponse {
+            token: "jwt-123".into(),
+            user_id: "alice".into(),
+            permissions: vec![],
+        });
+
+        state.auth.logout();
+
+        assert!(state.auth.token.get_cloned().is_none());
+        assert!(state.auth.user_id.get_cloned().is_none());
+    }
+}

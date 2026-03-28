@@ -9,29 +9,27 @@ fmt:
 fmt-check:
     cargo fmt --all -- --check
 
-# Run clippy (excludes frontend — use wasm target for that)
+# Run clippy (excludes frontend WASM targets)
 check:
     cargo clippy --workspace --all-targets --exclude app-frontend -- -D warnings
 
-# Run backend tests
+# Run all tests (backend + frontend state tests)
 test:
     cargo test --workspace --exclude app-frontend
-
-# Run frontend wasm tests (requires wasm-pack: cargo install wasm-pack)
-test-wasm:
-    wasm-pack test --headless --chrome crates/app-frontend
+    cargo test -p app-frontend --lib
 
 # Run tests with all feature combinations
 test-features:
-    cargo test --workspace
-    cargo test --workspace --no-default-features
-    cargo test --workspace --all-features
+    cargo test --workspace --exclude app-frontend
+    cargo test --workspace --exclude app-frontend --no-default-features
+    cargo test --workspace --exclude app-frontend --all-features
+    cargo test -p app-frontend --lib
 
 # Full CI pipeline locally
 ci: fmt-check check test-features
 
-# Run everything including frontend
-ci-all: ci test-wasm build-frontend
+# CI including frontend WASM build
+ci-all: ci build-frontend
 
 # Build in release mode
 build:
@@ -47,4 +45,4 @@ clean:
 
 # Watch and run tests on change (requires cargo-watch)
 watch:
-    cargo watch -x 'test --workspace'
+    cargo watch -x 'test --workspace --exclude app-frontend'

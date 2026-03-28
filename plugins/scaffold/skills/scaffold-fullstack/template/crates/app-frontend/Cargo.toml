@@ -21,6 +21,3 @@ serde.workspace = true
 serde_json.workspace = true
 web-sys = { version = "0.3", features = ["Headers", "Request", "RequestInit", "Response", "Window"] }
 serde-wasm-bindgen = "0.6"
-
-[dev-dependencies]
-wasm-bindgen-test = "0.3"
