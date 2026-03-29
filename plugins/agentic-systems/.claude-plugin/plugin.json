@@ -1,5 +1,9 @@
 {
   "name": "agentic-systems",
   "version": "1.0.0",
-  "description": "Agentic systems architecture — agent decomposition, communication patterns, tool design, state management, and observability for multi-agent applications"
+  "description": "Agentic systems architecture — agent decomposition, communication patterns, tool design, state management, and observability for multi-agent applications",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": ["agents", "multi-agent", "architecture", "orchestration", "tool-design", "observability"]
 }

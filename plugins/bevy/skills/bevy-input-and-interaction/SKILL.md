@@ -1,7 +1,7 @@
 ---
 name: bevy-input-and-interaction
 description: Use when the user asks about handling keyboard input, mouse input, gamepad/controller input, touch input, picking/raycasting, UI interaction, or input mapping in Bevy. Also triggers for questions about cursor position, mouse clicks on entities, or input abstraction.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Bevy Input & Interaction — Keyboard, Mouse, Gamepad & Picking

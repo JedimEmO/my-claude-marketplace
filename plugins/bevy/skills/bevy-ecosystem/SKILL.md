@@ -1,7 +1,7 @@
 ---
 name: bevy-ecosystem
 description: Use when the user asks about third-party Bevy crates, community plugins, which crate to use for a specific feature, Bevy ecosystem recommendations, or when looking for functionality not built into Bevy core. Also triggers for questions about Bevy version compatibility, migration between versions, or keeping up with breaking changes.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Bevy Ecosystem — Third-Party Crates & Migration

@@ -1,5 +1,9 @@
 {
   "name": "scaffold",
   "version": "1.0.0",
-  "description": "Project scaffolds — full-stack webapp (RAS + dwind) and desktop app (Tauri 2 + dwind)"
+  "description": "Project scaffolds — full-stack webapp (RAS + dwind) and desktop app (Tauri 2 + dwind)",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": ["rust", "scaffold", "fullstack", "tauri", "desktop", "template"]
 }

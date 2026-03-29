@@ -1,7 +1,7 @@
 ---
 name: dwind-styling
-description: This skill should be used when the user asks about styling, CSS classes, colors, spacing, layout, responsive design, hover/focus states, animations, visual appearance, or theming in a dwind/dominator context. Also triggers when the user mentions dwclass, utility classes, or breakpoints.
-tools: Read, Glob, Grep, Edit, Write, Bash
+description: Use when the user asks about styling, CSS classes, colors, spacing, layout, responsive design, hover/focus states, animations, visual appearance, or theming in a dwind/dominator context. Also triggers when the user mentions dwclass, utility classes, or breakpoints.
+version: 1.0.0
 ---
 
 # Dwind Styling — Utility Classes & Visual Design

@@ -1,7 +1,7 @@
 ---
 name: rust-ci-tooling
 description: Use when the user asks about CI/CD for Rust projects, clippy lints, rustfmt configuration, feature flag CI matrix, workspace-level tooling, justfile or Makefile setup, GitHub Actions for Rust, or pre-commit hooks for Rust projects.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Rust CI & Tooling — Clippy, Formatting & Automation

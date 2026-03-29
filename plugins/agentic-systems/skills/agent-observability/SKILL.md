@@ -1,7 +1,7 @@
 ---
 name: agent-observability
 description: Use when the user asks about tracing agent decisions, debugging multi-agent flows, monitoring tool usage, error handling in agent systems, resilience patterns for agents, circuit breakers, retry strategies, cost tracking, or human-in-the-loop observability.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Agent Observability — Tracing, Resilience, and Cost

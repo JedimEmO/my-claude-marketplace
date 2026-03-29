@@ -1,5 +1,9 @@
 {
   "name": "ras",
   "version": "1.0.0",
-  "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation"
+  "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": ["rust", "rest-api", "json-rpc", "websocket", "code-generation", "service"]
 }

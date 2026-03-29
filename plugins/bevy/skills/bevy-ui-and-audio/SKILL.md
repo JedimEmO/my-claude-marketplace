@@ -1,7 +1,7 @@
 ---
 name: bevy-ui-and-audio
 description: Use when the user asks about building UI in Bevy, game menus, HUD, health bars, buttons, text display, UI layout, or audio playback, sound effects, music, volume control, or spatial audio in Bevy.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Bevy UI & Audio — Game Interfaces & Sound

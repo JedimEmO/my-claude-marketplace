@@ -1,7 +1,7 @@
 ---
 name: bevy-project-setup
 description: Use when the user asks to create a new Bevy project, scaffold a game, configure Cargo.toml for Bevy, set up fast compile times, configure dynamic linking, add Bevy feature flags, or asks about Bevy project structure and build optimization.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Bevy Project Setup — Scaffolding & Build Optimization

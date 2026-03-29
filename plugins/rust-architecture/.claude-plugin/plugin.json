@@ -1,5 +1,9 @@
 {
   "name": "rust-architecture",
   "version": "1.0.0",
-  "description": "Opinionated Rust project structuring — workspace layout, DI patterns, testing strategy, and CI tooling"
+  "description": "Opinionated Rust project structuring — workspace layout, DI patterns, testing strategy, and CI tooling",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": ["rust", "architecture", "dependency-injection", "testing", "ci-cd", "workspace"]
 }

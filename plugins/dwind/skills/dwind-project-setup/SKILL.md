@@ -1,7 +1,7 @@
 ---
 name: dwind-project-setup
-description: This skill should be used when the user asks to create a new dwind project, set up dwind in an existing project, configure the Rust-to-WASM build pipeline, or asks about dwind project structure, Cargo.toml dependencies, rollup config, or wasm-pack setup.
-tools: Read, Glob, Grep, Edit, Write, Bash
+description: Use when the user asks to create a new dwind project, set up dwind in an existing project, configure the Rust-to-WASM build pipeline, or asks about dwind project structure, Cargo.toml dependencies, rollup config, or wasm-pack setup.
+version: 1.0.0
 ---
 
 # Dwind Project Setup — Scaffolding & Build Config

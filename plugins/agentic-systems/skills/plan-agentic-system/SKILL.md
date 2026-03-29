@@ -1,7 +1,7 @@
 ---
 name: plan-agentic-system
 description: Use when the user wants to plan, scope, or design a new agentic system from scratch through an interactive discovery process. Triggers on "plan an agent system", "help me design my agents", "I want to build a multi-agent system", "plan agentic system", or when the user needs guided discovery of what their agent architecture should look like.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Plan Agentic System — Interactive Architecture Discovery

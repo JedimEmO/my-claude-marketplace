@@ -1,7 +1,7 @@
 ---
 name: rust-architecture
 description: Use when the user asks about dependency injection in Rust, trait-as-interface patterns, module boundaries, hexagonal architecture, ports and adapters, error handling strategy, when to use generics vs dyn Trait, how to structure application layers, or how to wire dependencies together.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Rust Architecture — DI, Trait Boundaries & Error Handling

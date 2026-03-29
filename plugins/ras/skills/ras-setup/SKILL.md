@@ -1,7 +1,7 @@
 ---
 name: ras-setup
 description: Use when the user asks to create a new RAS project, set up a Rust Agent Stack workspace, configure Cargo.toml for RAS crates, add RAS dependencies, scaffold a service crate, or asks about RAS workspace structure and crate organization.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # RAS Project Setup — Workspace Scaffolding & Dependencies

@@ -1,7 +1,7 @@
 ---
 name: scaffold-fullstack
 description: Use when the user asks to scaffold, bootstrap, create, or start a new full-stack Rust project from scratch — including backend API, frontend UI, domain layer, and test infrastructure. Also use when they want a working starter template, a reference implementation, or to generate a new app following marketplace best practices.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Full-Stack Scaffold — RAS Backend + dwind Frontend

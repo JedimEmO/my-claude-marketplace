@@ -1,7 +1,7 @@
 ---
 name: ras-security
 description: Use when the user asks about authentication, authorization, permissions, JWT, OAuth2, session management, AuthProvider, IdentityProvider, securing RAS endpoints, token validation, RBAC, permission guards, or the UNAUTHORIZED/WITH_PERMISSIONS auth levels in RAS services.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # RAS Security — Auth, Permissions & Identity

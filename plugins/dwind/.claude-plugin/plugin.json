@@ -1,5 +1,9 @@
 {
   "name": "dwind",
   "version": "1.0.0",
-  "description": "Skills for building UIs with the dwind/dominator/futures-signals Rust+WASM stack"
+  "description": "Skills for building UIs with the dwind/dominator/futures-signals Rust+WASM stack",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": ["rust", "wasm", "ui", "dominator", "futures-signals", "frontend"]
 }

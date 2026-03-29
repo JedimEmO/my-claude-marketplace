@@ -1,7 +1,7 @@
 ---
 name: tool-design
 description: Use when the user asks about designing tools for agents, tool granularity, tool schemas, input/output contracts, error contracts for tools, tool composability, tool descriptions, idempotency, or when building the tool layer of an agentic system.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Tool Design — Interfaces, Contracts, and Composability

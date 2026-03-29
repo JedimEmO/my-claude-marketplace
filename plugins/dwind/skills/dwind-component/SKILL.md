@@ -1,7 +1,7 @@
 ---
 name: dwind-component
-description: This skill should be used when the user asks to create a component, build a UI element, use a dwui widget, references the #[component] macro, or asks about component patterns in the dwind/dominator stack.
-tools: Read, Glob, Grep, Edit, Write, Bash
+description: Use when the user asks to create a component, build a UI element, use a dwui widget, references the #[component] macro, or asks about component patterns in the dwind/dominator stack.
+version: 1.0.0
 ---
 
 # Dwind Component Patterns

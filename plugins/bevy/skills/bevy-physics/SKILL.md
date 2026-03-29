@@ -1,7 +1,7 @@
 ---
 name: bevy-physics
 description: Use when the user asks about physics simulation in Bevy, collision detection, rigid bodies, colliders, raycasting for physics, joints, character controllers, or integrating avian or bevy_rapier physics.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Bevy Physics — Rigid Bodies, Colliders & Simulation

@@ -1,5 +1,9 @@
 {
   "name": "bevy",
   "version": "1.0.0",
-  "description": "Skills for building games and interactive applications with the Bevy ECS game engine in Rust"
+  "description": "Skills for building games and interactive applications with the Bevy ECS game engine in Rust",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": ["rust", "bevy", "game-engine", "ecs", "gamedev", "rendering", "physics"]
 }

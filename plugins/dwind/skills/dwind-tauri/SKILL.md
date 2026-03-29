@@ -1,7 +1,7 @@
 ---
 name: dwind-tauri
-description: This skill should be used when the user asks to build a Tauri desktop application with a dwind/dominator frontend, set up Tauri with Rust WASM UI, create Tauri commands or IPC, handle Tauri events from dwind, configure tauri.conf.json, or asks about Tauri + dwind project structure.
-tools: Read, Glob, Grep, Edit, Write, Bash
+description: Use when the user asks to build a Tauri desktop application with a dwind/dominator frontend, set up Tauri with Rust WASM UI, create Tauri commands or IPC, handle Tauri events from dwind, configure tauri.conf.json, or asks about Tauri + dwind project structure.
+version: 1.0.0
 ---
 
 # Tauri + Dwind Desktop App

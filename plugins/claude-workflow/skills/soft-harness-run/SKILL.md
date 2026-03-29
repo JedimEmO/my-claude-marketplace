@@ -1,7 +1,7 @@
 ---
 name: soft-harness-run
 description: Use when the user asks to run a soft harness, check code quality metrics, compare against a quality baseline, view quality regressions, run qualitative tests, or evaluate non-functional code properties. Also triggered by "run the harness", "check quality", "how does this compare to baseline", or "quality report".
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Soft Harness — Run and Report

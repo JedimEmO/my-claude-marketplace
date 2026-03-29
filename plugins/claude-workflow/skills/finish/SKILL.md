@@ -1,7 +1,7 @@
 ---
 name: finish
 description: Use when the user says they are done, asks to finish a task, wants to verify their work is complete, wants a pre-commit quality check, or asks to validate that changes are ready to ship. Also triggered by phrases like "wrap up", "finalize", "make sure this is done", "are we good?", or "let's finish".
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Finish — Pre-Completion Verification Workflow

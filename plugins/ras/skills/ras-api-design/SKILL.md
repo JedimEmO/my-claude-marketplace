@@ -1,7 +1,7 @@
 ---
 name: ras-api-design
 description: Use when the user asks about defining REST endpoints, JSON-RPC methods, file service routes, or WebSocket services with RAS macros, designing request/response types, path parameters, query parameters, macro syntax for rest_service!, jsonrpc_service!, file_service!, or jsonrpc_bidirectional_service!, or asks about OpenAPI/OpenRPC generation.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # RAS API Design — Macro Syntax & Endpoint Definition

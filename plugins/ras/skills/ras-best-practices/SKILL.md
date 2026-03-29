@@ -1,7 +1,7 @@
 ---
 name: ras-best-practices
 description: Use when the user asks about RAS observability, error handling in RAS services, usage tracking, method duration tracking, Prometheus metrics, OpenTelemetry integration, using the generated Rust client, service-to-service communication, testing RAS services, or general best practices for production RAS deployments.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # RAS Best Practices — Observability, Errors, Clients & Testing

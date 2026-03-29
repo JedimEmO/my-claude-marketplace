@@ -1,7 +1,7 @@
 ---
 name: dwind-design-system
-description: This skill should be used when the user asks about design tokens, design system architecture, spacing scales, type scales, color systems, semantic tokens, component spacing conventions, vertical rhythm, dark/light theme token mapping, accessibility contrast ratios, or organizing a design system crate in a dwind/dominator context. Also triggers when the user mentions token hierarchy, baseline grid, or design system structure.
-tools: Read, Glob, Grep, Edit, Write, Bash
+description: Use when the user asks about design tokens, design system architecture, spacing scales, type scales, color systems, semantic tokens, component spacing conventions, vertical rhythm, dark/light theme token mapping, accessibility contrast ratios, or organizing a design system crate in a dwind/dominator context. Also triggers when the user mentions token hierarchy, baseline grid, or design system structure.
+version: 1.0.0
 ---
 
 # Dwind Design System — Tokens, Scales & Conventions

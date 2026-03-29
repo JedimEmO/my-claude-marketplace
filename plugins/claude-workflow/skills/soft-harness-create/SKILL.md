@@ -1,7 +1,7 @@
 ---
 name: soft-harness-create
 description: Use when the user asks to create a soft harness, set up qualitative tests, measure code quality, track non-functional metrics, create architectural conformance checks, analyze code complexity trends, set up documentation completeness tracking, or wants a quality baseline for a module or project. Also triggered by "soft test", "quality harness", "non-functional test suite", or "quality baseline".
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Soft Harness — Create Qualitative Test Suite

@@ -1,7 +1,7 @@
 ---
 name: agent-decomposition
 description: Use when the user asks about splitting a system into agents, agent boundaries, how many agents to use, agent responsibility assignment, capability allocation, or agent topology design. Also triggers on "should this be one agent or multiple", "agent architecture", or "agent roles".
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Agent Decomposition — Boundaries, Roles, and Topologies

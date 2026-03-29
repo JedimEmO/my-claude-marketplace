@@ -1,7 +1,7 @@
 ---
 name: agent-communication
 description: Use when the user asks about how agents communicate, orchestration vs choreography, delegation patterns, agent-to-agent messaging, trust boundaries, capability gates, human-in-the-loop checkpoints, or back-pressure in multi-agent systems.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Agent Communication — Delegation, Trust, and Flow Control

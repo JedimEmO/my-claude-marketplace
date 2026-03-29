@@ -1,7 +1,7 @@
 ---
 name: bevy-ecs
 description: Use when the user asks about Bevy's Entity Component System, defining components, writing systems, queries, commands, resources, events, observers, system ordering, system sets, run conditions, or the ECS paradigm in Bevy. Also triggers when the user is confused about the ECS mental model or asks how to structure game logic.
-tools: Read, Glob, Grep, Edit, Write, Bash
+version: 1.0.0
 ---
 
 # Bevy ECS — Entity Component System Fundamentals
