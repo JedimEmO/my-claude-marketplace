@@ -111,6 +111,14 @@ def main():
                 rel = ref_md.relative_to(plugin_dir)
                 print(f"  - [{ref_title}]({plugin_name}/{rel})")
 
+        # Agents
+        agents_dir = plugin_dir / "agents"
+        if agents_dir.exists():
+            for agent_md in sorted(find_md_files(agents_dir)):
+                title = extract_title(agent_md)
+                rel = agent_md.relative_to(plugin_dir)
+                print(f"- [{title}]({plugin_name}/{rel})")
+
         print()
 
 

@@ -44,6 +44,12 @@
       "source": "./plugins/bevy",
       "description": "Skills for building games and interactive applications with the Bevy ECS game engine in Rust",
       "version": "1.0.0"
+    },
+    {
+      "name": "agentic-systems",
+      "source": "./plugins/agentic-systems",
+      "description": "Agentic systems architecture — agent decomposition, communication patterns, tool design, state management, and observability for multi-agent applications",
+      "version": "1.0.0"
     }
   ]
 }
