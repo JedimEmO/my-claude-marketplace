@@ -1,0 +1,26 @@
+{
+  "name": "claude-workflow",
+  "version": "1.0.0",
+  "description": "Workflow orchestration and qualitative code analysis — task completion checklist, soft harness creation and execution for non-functional quality tracking",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["workflow", "quality", "testing", "code-review", "harness"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Claude Workflow",
+    "shortDescription": "Run completion checks and qualitative harness workflows",
+    "longDescription": "Workflow skills for task completion checks, soft harness creation, and qualitative code analysis for non-functional quality tracking.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Run a completion check or soft quality harness."
+    ],
+    "brandColor": "#7C3AED"
+  }
+}

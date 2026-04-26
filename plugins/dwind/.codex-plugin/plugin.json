@@ -1,0 +1,26 @@
+{
+  "name": "dwind",
+  "version": "1.0.0",
+  "description": "Skills for building UIs with the dwind/dominator/futures-signals Rust+WASM stack",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["rust", "wasm", "ui", "dominator", "futures-signals", "frontend"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "dwind",
+    "shortDescription": "Build Rust WASM UIs with dwind and dominator",
+    "longDescription": "Skills for building Rust WASM frontends with dwind, dominator, futures-signals, component patterns, styling, events, testing, and Tauri integration.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Help me build a dwind UI component or project."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

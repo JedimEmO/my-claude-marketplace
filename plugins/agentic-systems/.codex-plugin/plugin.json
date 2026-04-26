@@ -1,0 +1,26 @@
+{
+  "name": "agentic-systems",
+  "version": "1.0.0",
+  "description": "Agentic systems architecture — agent decomposition, communication patterns, tool design, state management, and observability for multi-agent applications",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["agents", "multi-agent", "architecture", "orchestration", "tool-design", "observability"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agentic Systems",
+    "shortDescription": "Design multi-agent systems and tool workflows",
+    "longDescription": "Architecture skills for multi-agent systems, including agent decomposition, communication patterns, state management, tool design, and observability.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Help me design an agentic system architecture."
+    ],
+    "brandColor": "#0891B2"
+  }
+}

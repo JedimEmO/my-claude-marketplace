@@ -1,0 +1,26 @@
+{
+  "name": "rust-architecture",
+  "version": "1.0.0",
+  "description": "Opinionated Rust project structuring — workspace layout, DI patterns, testing strategy, and CI tooling",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["rust", "architecture", "dependency-injection", "testing", "ci-cd", "workspace"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Rust Architecture",
+    "shortDescription": "Structure Rust workspaces, traits, tests, and CI",
+    "longDescription": "Opinionated Rust architecture skills for workspace layout, dependency inversion, trait-as-interface patterns, testing strategy, project setup, and CI tooling.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Help me structure this Rust project."
+    ],
+    "brandColor": "#B7410E"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "scaffold",
+  "version": "1.0.0",
+  "description": "Project scaffolds — full-stack webapp (RAS + dwind) and desktop app (Tauri 2 + dwind)",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["rust", "scaffold", "fullstack", "tauri", "desktop", "template"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Scaffold",
+    "shortDescription": "Generate Rust full-stack and desktop starter projects",
+    "longDescription": "Project scaffolds for full-stack RAS plus dwind web applications and Tauri 2 plus dwind desktop applications, including templates and customization guidance.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Scaffold a Rust full-stack or desktop project."
+    ],
+    "brandColor": "#16A34A"
+  }
+}

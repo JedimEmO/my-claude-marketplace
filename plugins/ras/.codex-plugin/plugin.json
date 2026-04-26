@@ -1,0 +1,26 @@
+{
+  "name": "ras",
+  "version": "1.0.0",
+  "description": "Skills for building type-safe services with the Rust Agent Stack — REST, JSON-RPC, file, and WebSocket APIs via macro-driven code generation",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["rust", "rest-api", "json-rpc", "websocket", "code-generation", "service"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "RAS",
+    "shortDescription": "Build Rust Agent Stack services",
+    "longDescription": "Skills for building type-safe Rust Agent Stack services with REST, JSON-RPC, file, and WebSocket APIs through macro-driven service definitions.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Help me design or implement a RAS API."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

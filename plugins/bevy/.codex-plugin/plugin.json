@@ -1,0 +1,26 @@
+{
+  "name": "bevy",
+  "version": "1.0.0",
+  "description": "Skills for building games and interactive applications with the Bevy ECS game engine in Rust",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": ["rust", "bevy", "game-engine", "ecs", "gamedev", "rendering", "physics"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Bevy",
+    "shortDescription": "Build Rust games and interactive apps with Bevy",
+    "longDescription": "Skills for Bevy ECS, project setup, rendering, physics, input and interaction, UI, audio, and ecosystem choices for Rust games and interactive applications.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Help me build or structure a Bevy game."
+    ],
+    "brandColor": "#8B5CF6"
+  }
+}
