@@ -26,7 +26,9 @@ fn item_error_to_rest(e: ItemError) -> RestError {
         ItemError::AlreadyExists(id) => {
             RestError::bad_request(format!("Item already exists: {id}"))
         }
-        ItemError::Storage(msg) => RestError::internal_server_error(msg),
+        ItemError::Storage(msg) => {
+            RestError::with_internal(500, "Internal server error", std::io::Error::other(msg))
+        }
     }
 }
 

@@ -73,10 +73,13 @@ async fn main() -> Result<()> {
         .await
         .context("failed to create demo user")?;
 
-    // Session: JWT creation + validation
+    // Session: JWT creation + validation. RAS rejects short or placeholder secrets.
+    let jwt_secret = std::env::var("JWT_SECRET")
+        .unwrap_or_else(|_| "dev-only-secret-change-before-production-32-bytes".to_string());
+    let session_config = SessionConfig::new(jwt_secret).context("invalid JWT session config")?;
     let permissions = Arc::new(StaticPermissions::new(vec!["items:write".into()]));
     let session_service =
-        Arc::new(SessionService::new(SessionConfig::default()).with_permissions(permissions));
+        Arc::new(SessionService::new(session_config)?.with_permissions(permissions));
     session_service
         .register_provider(Box::new(local_provider))
         .await;

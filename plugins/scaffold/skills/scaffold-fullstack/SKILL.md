@@ -72,6 +72,7 @@ template/
 - **Trait-as-Interface DI** — domain traits in core, implementations in adapters, wiring in service binary (see **rust-architecture** skill)
 - **Workspace-first layout** — all crates under `crates/`, shared deps in `[workspace.dependencies]` (see **rust-project-setup** skill)
 - **RAS macro-driven API** — `rest_service!` generates trait, builder, client, and OpenAPI spec (see **ras-api-design** skill)
+- **Hosted API explorer** — `serve_docs: true` exposes `/api/v1/docs` and `/api/v1/docs/openapi.json`
 - **Hand-written fakes** — `FakeItemRepository` and `FakeAuthProvider` with `Mutex` for `Send + Sync` (see **rust-testing** skill)
 - **TestApp pattern** — full Axum router in-process via `axum-test` (see **ras-best-practices** skill)
 - **Shared types** — request/response DTOs in `app-core::dto`, used by both frontend and backend
@@ -104,6 +105,8 @@ The scaffold uses real JWT authentication via RAS identity crates:
 2. **Token storage** — Frontend stores the JWT in reactive state (`Mutable<Option<String>>`)
 3. **Authenticated requests** — Frontend passes `Authorization: Bearer <token>` on POST/DELETE
 4. **Validation** — `JwtAuthProvider` validates the JWT on every protected endpoint
+
+The API explorer at `/api/v1/docs` can also call protected endpoints with a bearer token. It stores the entered token in browser `sessionStorage`, not persistent `localStorage`.
 
 ### Endpoint Auth Levels
 

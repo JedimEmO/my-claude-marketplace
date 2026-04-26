@@ -79,8 +79,8 @@ rest_service!({
     base_path: "/api/v1",               // Required: URL prefix for all endpoints
     openapi: true,                      // Optional: generate OpenAPI 3.0 spec
     openapi: { output: "custom.json" }, // Optional: custom output path
-    serve_docs: true,                   // Optional: host Swagger UI
-    docs_path: "/docs",                 // Optional: Swagger UI path (default: "/docs")
+    serve_docs: true,                   // Optional: host the built-in API explorer
+    docs_path: "/docs",                 // Optional: explorer path (default: "/docs")
     endpoints: [ ... ]
 });
 ```
@@ -102,6 +102,15 @@ pub struct CreateTaskRequest {
 - `JsonSchema` — schemars, for OpenAPI spec generation
 
 Missing `JsonSchema` causes a compile error when `openapi: true`.
+
+### Hosted REST Explorer
+
+When `serve_docs: true` is set, the generated router serves the built-in RAS API explorer at `base_path + docs_path` and the OpenAPI document at `base_path + docs_path + "/openapi.json"`. For example, `base_path: "/api/v1"` and `docs_path: "/docs"` serve:
+
+- `GET /api/v1/docs` — interactive API explorer
+- `GET /api/v1/docs/openapi.json` — generated OpenAPI JSON
+
+The explorer has built-in bearer-token entry for trying protected endpoints. Tokens are stored in `sessionStorage` for the current browser session, not `localStorage`; only non-secret UI preferences such as theme are stored persistently.
 
 ### Error Responses
 
@@ -145,7 +154,9 @@ impl From<TaskError> for RestError {
         match e {
             TaskError::NotFound(msg) => RestError::not_found(msg),
             TaskError::DuplicateTitle(msg) => RestError::bad_request(msg),
-            TaskError::Storage(msg) => RestError::with_internal(500, "Internal error", msg),
+            TaskError::Storage(msg) => {
+                RestError::with_internal(500, "Internal error", std::io::Error::other(msg))
+            }
         }
     }
 }
@@ -227,6 +238,8 @@ jsonrpc_service!({
 ```
 
 JSON-RPC methods map to JSON-RPC 2.0 `method` strings. Like REST, `UNAUTHORIZED` methods receive only the request, while `WITH_PERMISSIONS` methods also receive `&AuthenticatedUser`.
+
+When `explorer: true` is used with `openrpc: true`, the macro generates `{service}_explorer_routes(base_path)`. Merge those routes into your Axum app to serve the same built-in explorer at `/explorer` by default, plus `/explorer/openrpc.json`. A custom path can be configured with `explorer: { path: "/api/docs" }`.
 
 ## `file_service!` — File Upload/Download
 

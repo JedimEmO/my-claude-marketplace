@@ -85,6 +85,8 @@ rest_service!({
 
 The domain crate stays clean — no macro dependencies, no HTTP/RPC concerns.
 
+With `serve_docs: true`, the router hosts the built-in RAS API explorer at `/api/v1/docs` and the OpenAPI JSON at `/api/v1/docs/openapi.json`. The explorer supports bearer-token testing and keeps tokens in browser `sessionStorage`, not persistent `localStorage`.
+
 ## Workspace Cargo.toml
 
 Follow `rust-project-setup` conventions with RAS crates in `[workspace.dependencies]`:
@@ -198,7 +200,8 @@ impl TaskServiceTrait for TaskServiceImpl {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let session_service = Arc::new(SessionService::new(SessionConfig::default()));
+    let jwt_secret = std::env::var("JWT_SECRET").context("JWT_SECRET must be set")?;
+    let session_service = Arc::new(SessionService::new(SessionConfig::new(jwt_secret)?)?);
     let auth: Arc<dyn ras_auth_core::AuthProvider> =
         Arc::new(JwtAuthProvider::new(session_service));
 

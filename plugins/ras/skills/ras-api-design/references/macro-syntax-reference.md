@@ -7,8 +7,8 @@ rest_service!({
     service_name: Name,              // Required
     base_path: "/prefix",            // Required
     openapi: true,                   // Optional — or { output: "path.json" }
-    serve_docs: true,                // Optional — Swagger UI
-    docs_path: "/docs",              // Optional — default "/docs"
+    serve_docs: true,                // Optional — built-in API explorer
+    docs_path: "/docs",              // Optional — explorer path, default "/docs"
     endpoints: [
         METHOD AUTH path/{param: Type}/more ? query: Type & opt: Option<Type> (Body) -> Response,
     ]
@@ -22,6 +22,8 @@ rest_service!({
 **Trait:** `{ServiceName}Trait`
 **Builder:** `{ServiceName}Builder`
 **Client:** `{ServiceName}Client`
+
+**Hosted docs:** `serve_docs: true` serves the explorer at `base_path + docs_path` and the OpenAPI JSON at `base_path + docs_path + "/openapi.json"`. Bearer tokens entered in the explorer are kept in `sessionStorage`, not `localStorage`.
 
 ## `jsonrpc_service!`
 
@@ -38,6 +40,8 @@ jsonrpc_service!({
 
 **Trait:** `{ServiceName}` (no Trait suffix)
 **Builder:** `{ServiceName}Builder`
+
+**Hosted explorer:** `explorer: true` requires `openrpc: true` and generates `{service}_explorer_routes(base_path)`, serving the explorer at `/explorer` by default and OpenRPC JSON at `/explorer/openrpc.json`.
 
 ## `file_service!`
 

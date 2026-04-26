@@ -43,7 +43,7 @@ async fn post_tasks(&self, user: &AuthenticatedUser, req: CreateTaskRequest) -> 
 
 ## The `AuthProvider` Trait
 
-`AuthProvider` is the port that RAS macros use to validate incoming requests. It extracts the bearer token, validates it, and returns an `AuthenticatedUser` with permissions.
+`AuthProvider` is the port that RAS macros use to validate incoming requests. The generated router extracts the bearer token, passes the token string to `authenticate`, and receives an `AuthenticatedUser` with permissions.
 
 ```rust
 use ras_auth_core::{AuthProvider, AuthenticatedUser, AuthResult, AuthFuture};
@@ -100,7 +100,10 @@ Security features: Argon2 password hashing, timing attack resistance, username e
 **OAuth2 (external IdP):**
 
 ```rust
-use ras_identity_oauth2::{OAuth2Provider, OAuth2Config, ProviderConfig};
+use ras_identity_oauth2::{
+    InMemoryStateStore, OAuth2Config, OAuth2Provider, OAuth2ProviderConfig,
+};
+use std::sync::Arc;
 
 let google_config = OAuth2ProviderConfig {
     provider_id: "google".into(),
@@ -116,10 +119,9 @@ let google_config = OAuth2ProviderConfig {
     user_info_mapping: None,
 };
 
-let oauth_provider = OAuth2Provider::new(
-    OAuth2Config { providers: vec![google_config] },
-    state_store,  // Arc<dyn OAuth2StateStore>
-);
+let state_store = Arc::new(InMemoryStateStore::new());
+let oauth_provider =
+    OAuth2Provider::new(OAuth2Config::new().add_provider(google_config), state_store);
 ```
 
 PKCE is used by default for authorization code flow.
@@ -139,7 +141,13 @@ impl IdentityProvider for LdapProvider {
         let username = payload["username"].as_str().ok_or(IdentityError::InvalidCredentials)?;
         let password = payload["password"].as_str().ok_or(IdentityError::InvalidCredentials)?;
         // LDAP verification...
-        Ok(VerifiedIdentity { subject: username.into(), ..Default::default() })
+        Ok(VerifiedIdentity {
+            provider_id: self.provider_id().into(),
+            subject: username.into(),
+            email: None,
+            display_name: None,
+            metadata: None,
+        })
     }
 }
 ```
@@ -150,19 +158,15 @@ impl IdentityProvider for LdapProvider {
 
 ```rust
 use ras_identity_session::{SessionService, SessionConfig, JwtAuthProvider};
-use std::time::Duration;
+use chrono::Duration;
 
-use jsonwebtoken::Algorithm;
+let mut config = SessionConfig::new(
+    std::env::var("JWT_SECRET").expect("JWT_SECRET must be set"),
+)?;
+config.jwt_ttl = Duration::hours(1);
+config.refresh_enabled = false;
 
-let config = SessionConfig {
-    jwt_secret: std::env::var("JWT_SECRET").expect("JWT_SECRET must be set"),
-    jwt_ttl: Duration::from_secs(3600),  // 1 hour
-    algorithm: Algorithm::HS256,
-    refresh_enabled: false,
-    enforce_active_sessions: true,
-};
-
-let session_service = Arc::new(SessionService::new(config));
+let session_service = Arc::new(SessionService::new(config)?);
 
 // Register identity providers
 session_service.register_provider(Box::new(local_provider)).await;
@@ -257,6 +261,7 @@ The `Internal` variant logs the source error but only returns "internal authenti
 - **Audit auth failures** — log failed auth attempts with request metadata (IP, user-agent) for incident response
 - **Validate all inputs** — request types get serde deserialization, but validate business constraints in handlers
 - **Sanitize error responses** — use `RestError::with_internal()` to log details without exposing them
+- **Do not persist bearer tokens in browser `localStorage`** — the generated explorers keep entered tokens in `sessionStorage`; follow the same pattern for debugging tools
 
 ## Related Skills
 

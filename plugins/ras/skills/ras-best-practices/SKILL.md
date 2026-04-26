@@ -160,7 +160,8 @@ Follow the **rust-testing** skill's approach: hand-written fakes, `TestApp` patt
 ### Hand-Written `FakeAuthProvider`
 
 ```rust
-use ras_auth_core::{AuthProvider, AuthenticatedUser, AuthResult, AuthError};
+use ras_auth_core::{AuthProvider, AuthenticatedUser, AuthResult, AuthError, AuthFuture};
+use std::collections::HashSet;
 use std::sync::Mutex;
 
 pub struct FakeAuthProvider {
@@ -177,24 +178,25 @@ impl FakeAuthProvider {
             token.into(),
             AuthenticatedUser {
                 user_id: user_id.into(),
-                permissions,
-                ..Default::default()
+                permissions: permissions.into_iter().collect::<HashSet<_>>(),
+                metadata: None,
             },
         ));
     }
 }
 
-#[async_trait::async_trait]
 impl AuthProvider for FakeAuthProvider {
-    async fn authenticate(&self, token: String) -> AuthResult<AuthenticatedUser> {
-        self.users.lock().unwrap()
-            .iter()
-            .find(|(t, _)| *t == token)
-            .map(|(_, u)| u.clone())
-            .ok_or(AuthError::InvalidToken)
+    fn authenticate(&self, token: String) -> AuthFuture<'_> {
+        Box::pin(async move {
+            self.users.lock().unwrap()
+                .iter()
+                .find(|(t, _)| *t == token)
+                .map(|(_, u)| u.clone())
+                .ok_or(AuthError::InvalidToken)
+        })
     }
 
-    async fn check_permissions(
+    fn check_permissions(
         &self,
         user: &AuthenticatedUser,
         required: &[String],
@@ -202,7 +204,10 @@ impl AuthProvider for FakeAuthProvider {
         if required.iter().all(|p| user.permissions.contains(p)) {
             Ok(())
         } else {
-            Err(AuthError::InsufficientPermissions)
+            Err(AuthError::InsufficientPermissions {
+                required: required.to_vec(),
+                has: user.permissions.iter().cloned().collect(),
+            })
         }
     }
 }
