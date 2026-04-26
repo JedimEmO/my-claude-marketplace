@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Audit"
+  short_description: "Find vulnerabilities and add security tests."
+  default_prompt: "Audit this code for security issues."

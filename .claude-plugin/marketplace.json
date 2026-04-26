@@ -50,6 +50,12 @@
       "source": "./plugins/agentic-systems",
       "description": "Agentic systems architecture — agent decomposition, communication patterns, tool design, state management, and observability for multi-agent applications",
       "version": "1.0.0"
+    },
+    {
+      "name": "trust-engineering",
+      "source": "./plugins/trust-engineering",
+      "description": "Aggressive trust-building workflows for testing, verification, regression protection, and security assurance in AI-assisted development",
+      "version": "1.0.0"
     }
   ]
 }

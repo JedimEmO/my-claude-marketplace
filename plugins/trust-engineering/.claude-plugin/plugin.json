@@ -1,0 +1,17 @@
+{
+  "name": "trust-engineering",
+  "version": "1.0.0",
+  "description": "Aggressive trust-building workflows for testing, verification, regression protection, and security assurance in AI-assisted development",
+  "author": {
+    "name": "JedimEmO"
+  },
+  "keywords": [
+    "testing",
+    "verification",
+    "security",
+    "coverage",
+    "mutation-testing",
+    "fuzzing",
+    "trust"
+  ]
+}

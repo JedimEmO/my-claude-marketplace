@@ -1,0 +1,38 @@
+{
+  "name": "trust-engineering",
+  "version": "1.0.0",
+  "description": "Aggressive trust-building workflows for testing, verification, regression protection, and security assurance in AI-assisted development",
+  "author": {
+    "name": "JedimEmO",
+    "url": "https://github.com/JedimEmO"
+  },
+  "homepage": "https://jedimemo.github.io/my-claude-marketplace/",
+  "repository": "https://github.com/JedimEmO/my-claude-marketplace",
+  "keywords": [
+    "testing",
+    "verification",
+    "security",
+    "coverage",
+    "mutation-testing",
+    "fuzzing",
+    "trust"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Trust Engineering",
+    "shortDescription": "Build stronger evidence with tests, verification, and security audits",
+    "longDescription": "Skills for aggressive trust building in AI-assisted development: high test coverage, mutation testing, UAT and regression protection, fuzzing, static analysis, sanitizer runs, and security-focused code review backed by committed tests.",
+    "developerName": "JedimEmO",
+    "category": "Coding",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://jedimemo.github.io/my-claude-marketplace/",
+    "defaultPrompt": [
+      "Enforce robustness for this change.",
+      "Audit this code for security risks."
+    ],
+    "brandColor": "#0F766E"
+  }
+}
